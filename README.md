@@ -1,4 +1,4 @@
-# Opiframe_Project
+# Project
 
 
 The main idea of this  project was developing a program that gives access to users and admins to control a database with python 
