@@ -152,7 +152,7 @@ class Category:
         self.category_name=''
         self.category_list = pd.read_sql_query('''  Select * from production.categories ;  ''', engine)
         self.product_list = pd.read_sql_query('''   SELECT   category_id,brand_name,product_id, product_name
-                                                    FROM     production.products INNER JOIN
+                                                    FROM     production.products Left Join
                                                     production.brands ON production.products.brand_id = production.brands.brand_id''',engine)
                                                                          
     def print_category_list(self):
@@ -182,7 +182,7 @@ class Brand():
         self.brand_name=''
         self.brand_list = pd.read_sql_query('''  Select * from production.brands ;  ''', engine)
         self.product_list = pd.read_sql_query('''  SELECT   category_id,brand_name,product_id, product_name, list_price
-                                                    FROM     production.products INNER JOIN
+                                                    FROM     production.products Left Join
                                                     production.brands ON production.products.brand_id = production.brands.brand_id;''' ,engine)
         
     def return_products(self):
